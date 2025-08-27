@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brain Tumor Detection System</title>
+    <title>NeuroDetect - Brain Tumor Detection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -12,12 +13,11 @@
         }
 
         body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f5dc; /* Beige background */
-    min-height: 100vh;
-    color: #333;
-}
-
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            color: #333;
+        }
 
         .page {
             display: none;
@@ -37,16 +37,15 @@
         }
 
         .login-card {
-    background-color: #ffffff !important; /* Force pure white */
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-}
-
-
+            background-color: #ffffff !important;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.187);
+            width: 100%;
+            max-width: 410px;
+            text-align: center;
+        }
+        
 
         .logo {
             font-size: 3em;
@@ -55,7 +54,7 @@
 
         .login-title {
             font-size: 2em;
-            color: #4a5568;
+            color: #000000;
             margin-bottom: 30px;
         }
 
@@ -81,31 +80,31 @@
         }
 
         .form-input:focus {
-    border-color: #d2b48c; /* Beige tone */
-}
-
+            border-color: #00b4d8;
+            outline: none;
+        }
 
         .login-btn {
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(135deg, #d2b48c 0%, #8b7355 100%); /* Beige & brown */
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
+            width: 100%;
+            padding: 15px;
+            background: #00b4d8;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
 
         .login-btn:hover {
+            Background: #0090ad;
             transform: translateY(-2px);
         }
 
         /* Dashboard Styles */
         .dashboard {
             min-height: 100vh;
-            background: #f7fafc;
+            background: #ffffff;
         }
 
         .navbar {
@@ -143,17 +142,19 @@
             max-width: 1400px;
             margin: 0 auto;
         }
-.welcome-section {
-    background: #8b7355;  /* beige-brown theme background */
-    color: #ffffff;       /* white text */
-    padding: 40px;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* subtle shadow */
-}
+
+        .welcome-section {
+            background: linear-gradient(135deg, #606163, #1d4ed8);
+            color: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
 
         .welcome-title {
+            
             font-size: 2.5em;
             margin-bottom: 10px;
         }
@@ -167,26 +168,26 @@
 
         .stat-card {
             background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            text-align: center;
             transition: transform 0.3s ease;
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .stat-card:hover {
             transform: translateY(-5px);
         }
 
-        .stat-icon {
-            font-size: 3em;
-            margin-bottom: 15px;
-        }
 
         .stat-number {
             font-size: 2.5em;
             font-weight: bold;
-            color: #2d3748;
+            color: #2563eb;
             margin-bottom: 5px;
         }
 
@@ -197,37 +198,36 @@
 
         .actions-section {
             background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 0px;
+            border-radius: 0px;
             text-align: center;
         }
 
         .predict-btn {
-    background: #8b7355;       /* theme color */
-    color: #ffffff;            /* white text */
-    border: none;
-    padding: 14px 24px;
-    margin: 8px;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
+            background: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 14px 24px;
+            margin: 8px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
 
-.predict-btn:hover {
-    background: #a0896c;       /* lighter shade of theme */
-    transform: translateY(-3px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
-}
-
+        .predict-btn:hover {
+            background: #ffffff;
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+        }
 
         /* Prediction Page Styles */
         .prediction-page {
             min-height: 100vh;
-            background: #f7fafc;
+            background: #ffffff;
         }
 
         .prediction-container {
@@ -241,17 +241,145 @@
             padding: 20px 30px;
             border-radius: 15px;
             margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
         .back-btn {
-            background: #d2b48c;
-            color: white;
-            border: none;
+            background: #fff;
+            columns: black;
+            border: black solid 1px;
             padding: 10px 20px;
             border-radius: 8px;
             cursor: pointer;
-            margin-right: 15px;
+            transition: 0.3s;
+        }
+
+        .page-title {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .patient-details {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .patient-details .section-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #4a5568;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 30px;
+        }
+
+        .form-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-item label {
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 8px;
+        }
+
+        .form-item input,
+        .form-item select,
+        .form-item textarea {
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.2s ease;
+            background: #f9f9f9;
+        }
+
+        .form-item input:focus,
+        .form-item select:focus,
+        .form-item textarea:focus {
+            border-color: #2563eb;
+            outline: none;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(210, 180, 140, 0.2);
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .form-actions {
+            margin-top: 25px;
+            text-align: right;
+        }
+        .form-item select {
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;   /* capsule/rounded like inputs */
+    font-size: 1em;
+    background: #f9f9f9;
+    transition: all 0.2s ease;
+    color: #4a5568;
+    cursor: pointer;
+
+    /* remove default arrow */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Add a custom dropdown arrow */
+        .form-item {
+            position: relative;
+        }
+
+        .form-item::after {
+            content: "";  /* arrow symbol */
+            font-size: 1em;
+            color: #2563eb;
+            position: absolute;
+            right: 15px;
+            top: 65%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        /* On focus */
+        .form-item select:focus {
+            border-color: #2563eb;
+            outline: none;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(210, 180, 140, 0.2);
+        }
+
+
+        .save-btn {
+            background: #2563eb ;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .save-btn:hover {
+            background: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
 
         .prediction-grid {
@@ -271,7 +399,7 @@
             font-size: 1.5em;
             margin-bottom: 20px;
             color: #4a5568;
-            border-bottom: 3px solid #d2b48c;
+            border-bottom: 3px solid #2563eb;
             padding-bottom: 10px;
         }
 
@@ -285,14 +413,8 @@
         }
 
         .upload-area:hover {
-            border-color: #d2b48c;
+            border-color: #2563eb;
             background: rgba(210, 180, 140, 0.1);
-        }
-
-        .upload-icon {
-            font-size: 4em;
-            color: #a0aec0;
-            margin-bottom: 20px;
         }
 
         .upload-text {
@@ -306,8 +428,8 @@
         }
 
         .upload-btn {
-            background: linear-gradient(135deg, #f5f5dc 0%, #d2b48c 100%); /* beige gradient */
-            color: #8b7355; 
+            background:  #2563eb 100%;
+            color: #fff;
             border: none;
             padding: 15px 30px;
             border-radius: 10px;
@@ -318,7 +440,7 @@
         .image-preview {
             width: 100%;
             max-width: 300px;
-            height: 200px;
+            height: 300px;
             object-fit: cover;
             border-radius: 10px;
             margin: 20px auto;
@@ -327,23 +449,22 @@
         }
 
         .analyze-btn {
-  background: linear-gradient(135deg, #d2b48c 0%, #b08b62 100%); /* beige gradient */
-  color: #fff;
-  border: none;
-  padding: 15px 40px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1.1em;
-  width: 100%;
-  margin-top: 20px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
+            background: linear-gradient(135deg, #2563eb 0%, #b08b62 100%);
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            width: 100%;
+            margin-top: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
 
-.analyze-btn:hover {
-  background: linear-gradient(135deg, #b08b62 0%, #8b5e3c 100%); /* darker beige hover */
-}
-
+        .analyze-btn:hover {
+            background: linear-gradient(135deg, #b08b62 0%, #8b5e3c 100%);
+        }
 
         .loading {
             display: none;
@@ -353,7 +474,7 @@
 
         .spinner {
             border: 4px solid #f3f3f3;
-            border-top: 4px solid #d2b48c;
+            border-top: 4px solid #2563eb;
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -371,7 +492,7 @@
         }
 
         .result-header {
-            background: linear-gradient(135deg, #f5f5dc 0%, #d2b48c 100%);
+            background: linear-gradient(135deg, #f5f5dc 0%, #2563eb 100%);
             color: #8b7355;
             padding: 20px;
             border-radius: 10px;
@@ -381,6 +502,7 @@
 
         .result-header.normal {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
         }
 
         .result-status {
@@ -425,7 +547,7 @@
             background: #f7fafc;
             padding: 20px;
             border-radius: 10px;
-            border-left: 4px solid #d2b48c;
+            border-left: 4px solid #2563eb;
             margin-top: 20px;
         }
 
@@ -476,6 +598,238 @@
             color: #2d3748;
         }
 
+        /* Reports Page Styles */
+        .reports-container {
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .report-filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .search-bar {
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            width: 60%;
+        }
+
+        .filter-dropdown {
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .reports-table-wrapper {
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+
+        .reports-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .reports-table th, 
+        .reports-table td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .reports-table th {
+            background: #fafafa;
+            font-weight: bold;
+        }
+
+        .result-badge {
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .result-badge.danger {
+            background: #ffe5e5;
+            color: #d63031;
+        }
+
+        .result-badge.safe {
+            background: #e5ffe5;
+            color: #27ae60;
+        }
+
+        .status {
+            padding: 4px 10px;
+            border-radius: 10px;
+            font-size: 0.8em;
+        }
+
+        .status.reviewed {
+            background: #e8f5ff;
+            color: #2980b9;
+        }
+
+        .status.pending {
+            background: #fff5e5;
+            color: #e67e22;
+        }
+
+        .view-btn, .download-btn {
+            border: none;
+            padding: 6px 12px;
+            margin-right: 6px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85em;
+        }
+
+        .view-btn {
+            background: #3498db;
+            color: white;
+        }
+
+        .view-btn:hover {
+            background: #2980b9;
+        }
+
+        .download-btn {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .download-btn:hover {
+            background: #27ae60;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1000; 
+            padding-top: 80px;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+        }
+
+        .modal-content {
+            background: #fff;
+            margin: auto;
+            padding: 20px;
+            border-radius: 12px;
+            width: 70%;
+            max-width: 900px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close-btn {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        .modal-details {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .modal-info {
+            flex: 1;
+            font-size: 1.1em;
+        }
+
+        .modal-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .modal-image img {
+            max-width: 100%;
+            border-radius: 12px;
+            border: 2px solid #eee;
+        }
+
+        .doctor-notes textarea {
+            width: 100%;
+            height: 100px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 8px;
+            font-size: 1em;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .close-btn2 {
+            background: #f4f4f4;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .close-btn2:hover {
+            background: #ddd;
+        }
+
+        /* Alert styles */
+        .alert {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .alert-success {
+            background: #c6f6d5;
+            color: #276749;
+            border: 1px solid #9ae6b4;
+        }
+
+        .alert-error {
+            background: #fed7d7;
+            color: #c53030;
+            border: 1px solid #fbb6ce;
+        }
+
+        .alert-info {
+            background: #bee3f8;
+            color: #2c5282;
+            border: 1px solid #90cdf4;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
             .prediction-grid {
                 grid-template-columns: 1fr;
@@ -492,237 +846,32 @@
             .dashboard-container, .prediction-container {
                 padding: 15px;
             }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-details {
+                flex-direction: column;
+            }
+
+            .report-filters {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
         }
-        /* Reports Page Layout */
-.reports-container {
-  padding: 20px;
-}
-
-.page-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.page-title {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-
-/* Filters */
-.report-filters {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-}
-
-.search-bar {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  width: 60%;
-}
-
-.filter-dropdown {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-/* Table */
-.reports-table-wrapper {
-  overflow-x: auto;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  background: #fff;
-}
-
-.reports-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.reports-table th, 
-.reports-table td {
-  padding: 14px;
-  text-align: left;
-  border-bottom: 1px solid #eee;
-}
-
-.reports-table th {
-  background: #fafafa;
-  font-weight: bold;
-}
-
-/* Badges */
-.result-badge {
-  padding: 5px 10px;
-  border-radius: 12px;
-  font-size: 0.85em;
-  font-weight: bold;
-}
-
-.result-badge.danger {
-  background: #ffe5e5;
-  color: #d63031;
-}
-
-.result-badge.safe {
-  background: #e5ffe5;
-  color: #27ae60;
-}
-
-.status {
-  padding: 4px 10px;
-  border-radius: 10px;
-  font-size: 0.8em;
-}
-
-.status.reviewed {
-  background: #e8f5ff;
-  color: #2980b9;
-}
-
-.status.pending {
-  background: #fff5e5;
-  color: #e67e22;
-}
-
-/* Buttons */
-.view-btn, .download-btn {
-  border: none;
-  padding: 6px 12px;
-  margin-right: 6px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.85em;
-}
-
-.view-btn {
-  background: #3498db;
-  color: white;
-}
-
-.view-btn:hover {
-  background: #2980b9;
-}
-
-.download-btn {
-  background: #2ecc71;
-  color: white;
-}
-
-.download-btn:hover {
-  background: #27ae60;
-}
-/* Modal Overlay */
-.modal {
-  display: none; 
-  position: fixed;
-  z-index: 1000; 
-  padding-top: 80px;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.6);
-}
-
-/* Modal Box */
-.modal-content {
-  background: #fff;
-  margin: auto;
-  padding: 20px;
-  border-radius: 12px;
-  width: 70%;
-  max-width: 900px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  animation: slideDown 0.3s ease;
-}
-
-@keyframes slideDown {
-  from { transform: translateY(-30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-/* Close Button */
-.close-btn {
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #666;
-}
-
-.close-btn:hover {
-  color: #000;
-}
-
-/* Modal Content Layout */
-.modal-details {
-  display: flex;
-  gap: 20px;
-  margin: 20px 0;
-}
-
-.modal-info {
-  flex: 1;
-  font-size: 1.1em;
-}
-
-.modal-image {
-  flex: 1;
-  text-align: center;
-}
-
-.modal-image img {
-  max-width: 100%;
-  border-radius: 12px;
-  border: 2px solid #eee;
-}
-
-/* Doctor Notes */
-.doctor-notes textarea {
-  width: 100%;
-  height: 100px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-top: 8px;
-  font-size: 1em;
-}
-
-/* Modal Footer */
-.modal-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  margin-top: 15px;
-}
-
-.close-btn2 {
-  background: #f4f4f4;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.close-btn2:hover {
-  background: #ddd;
-}
-
-
+        
     </style>
 </head>
 <body>
     <!-- Login Page -->
     <div id="loginPage" class="page active">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <div class="login-container">
             <div class="login-card">
-                <div class="logo">🧠</div>
                 <h1 class="login-title">NeuroDetect</h1>
                 <p style="color: #718096; margin-bottom: 30px;">Advanced Brain Tumor Detection System</p>
                 
@@ -739,6 +888,8 @@
                     
                     <button type="submit" class="login-btn">Login</button>
                 </form>
+                
+                <div id="loginAlert"></div>
             
             </div>
         </div>
@@ -748,7 +899,7 @@
     <div id="dashboardPage" class="page">
         <div class="dashboard">
             <nav class="navbar">
-                <div class="nav-logo">🧠 NeuroDetect</div>
+                <div class="nav-logo">NeuroDetect</div>
                 <div class="nav-user">
                     <span>Welcome, <strong id="userDisplayName">Doctor</strong></span>
                     <button class="logout-btn" onclick="logout()">Logout</button>
@@ -761,28 +912,24 @@
                     <p>Advanced AI-powered medical imaging analysis for early tumor detection</p>
                 </div>
                 
-                <div class="stats-grid">
+                <div class="stats-grid" id="statsGrid">
                     <div class="stat-card">
-                        <div class="stat-icon">📊</div>
-                        <div class="stat-number">15</div>
+                        <div class="stat-number" id="totalScans">0</div>
                         <div class="stat-label">Total Scans Analyzed</div>
                     </div>
                     
                     <div class="stat-card">
-                        <div class="stat-icon">🎯</div>
-                        <div class="stat-number">94.2%</div>
+                        <div class="stat-number" id="accuracyRate">0%</div>
                         <div class="stat-label">Accuracy Rate</div>
                     </div>
                     
                     <div class="stat-card">
-                        <div class="stat-icon">⚡</div>
-                        <div class="stat-number">2.1s</div>
+                        <div class="stat-number" id="avgProcessingTime">0s</div>
                         <div class="stat-label">Average Processing Time</div>
                     </div>
                     
                     <div class="stat-card">
-                        <div class="stat-icon">🔍</div>
-                        <div class="stat-number">4</div>
+                        <div class="stat-number" id="earlyDetections">0</div>
                         <div class="stat-label">Early Detections</div>
                     </div>
                 </div>
@@ -790,13 +937,11 @@
                 <div class="actions-section">
                     <h2 style="margin-bottom: 20px; color: #4a5568;">Quick Actions</h2>
                     <button class="predict-btn" onclick="goToPrediction()">
-                        🔍 New Brain Scan Analysis
+                        New Brain Scan Analysis
                     </button>
                     <button class="predict-btn" onclick="goToReports()">
-                        📈 View Reports
+                        View Reports
                     </button>
-                </div>
-
                 </div>
             </div>
         </div>
@@ -806,25 +951,63 @@
     <div id="predictionPage" class="page">
         <div class="prediction-page">
             <nav class="navbar">
-                <div class="nav-logo">🧠 NeuroDetect</div>
+                <div class="nav-logo">NeuroDetect</div>
                 <div class="nav-user">
-                    <span>Welcome, <strong>Doctor</strong></span>
+                    <span>Welcome, <strong id="userDisplayName2">Doctor</strong></span>
                     <button class="logout-btn" onclick="logout()">Logout</button>
                 </div>
             </nav>
             
             <div class="prediction-container">
                 <div class="page-header">
-                    <button class="back-btn" onclick="goToDashboard() ">← Back to Dashboard</button>
-                    <span style="font-size: 1.3em; font-weight: bold;">Brain Scan Analysis</span>
+                    <button class="back-btn" onclick="goToDashboard()">  ← Back </button>
+                    <span class="page-title">Brain Scan Analysis</span>
                 </div>
                 
+                <div class="patient-details">
+                    <h2 class="section-title">Patient Information</h2>
+                    <form id="patientForm">
+                        <div class="form-grid">
+                            <div class="form-item">
+                                <label>Patient ID</label>
+                                <input type="text" id="patientId" readonly>
+                            </div>
+                            <div class="form-item">
+                                <label>Full Name</label>
+                                <input type="text" id="patientName" required>
+                            </div>
+                            <div class="form-item">
+                                <label>Age</label>
+                                <input type="number" id="patientAge" min="0" required>
+                            </div>
+                            <div class="form-item">
+                                <label>Gender</label>
+                                <select id="patientGender" required>
+                                    <option value="">Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <label>Scan Date</label>
+                                <input type="date" id="scanDate" required>
+                            </div>
+                            <div class="form-item" style="grid-column: span 2;">
+                                <label>Symptoms / Notes</label>
+                                <textarea id="patientNotes" rows="2" placeholder="Enter patient symptoms or notes..."></textarea>
+                            </div>
+                        </div>
+                        
+                    </form>
+                    <div id="patientAlert"></div>
+                </div>
+
                 <div class="prediction-grid">
-                    <div class="upload-section">
-                        <h2 class="section-title">📤 Upload Brain Scan</h2>
+                    <div class="upload-section" id="uploadSection">
+                        <h2 class="section-title">Upload Brain Scan</h2>
                         
                         <div class="upload-area" id="uploadArea">
-                            <div class="upload-icon">🖼️</div>
                             <div class="upload-text">Drag and drop your brain scan image here</div>
                             <div class="upload-text">or click to browse</div>
                             <input type="file" id="fileInput" class="file-input" accept="image/*">
@@ -836,7 +1019,7 @@
                         <div id="imageContainer" style="display: none; text-align: center;">
                             <img id="uploadedImage" class="image-preview" alt="Uploaded brain scan">
                             <button class="analyze-btn" onclick="analyzeImage()">
-                                🔍 Analyze with AI
+                                Analyze the MRI
                             </button>
                         </div>
                         
@@ -848,10 +1031,10 @@
                     </div>
                     
                     <div class="results-section">
-                        <h2 class="section-title">📊 Analysis Results</h2>
+                        <h2 class="section-title">Analysis Results</h2>
                         
                         <div id="noResults" style="text-align: center; color: #718096; padding: 40px;">
-                            <div style="font-size: 4em; margin-bottom: 20px;">🔬</div>
+                           
                             <p>Upload a brain scan to see AI analysis results</p>
                         </div>
                         
@@ -862,7 +1045,7 @@
                             </div>
                             
                             <div class="gradcam-section">
-                                <div class="gradcam-title">🎯 Grad-CAM Visualization</div>
+                                <div class="gradcam-title">Grad-CAM Visualization</div>
                                 <div class="gradcam-container">
                                     <img id="gradcamImage" class="image-preview" alt="Grad-CAM visualization">
                                     <div class="gradcam-overlay" id="gradcamOverlay"></div>
@@ -881,7 +1064,7 @@
                             <div class="details-grid">
                                 <div class="detail-item">
                                     <div class="detail-label">Processing Time</div>
-                                    <div class="detail-value" id="processingTime">3.2s</div>
+                                    <div class="detail-value" id="processingTime">0s</div>
                                 </div>
                                 <div class="detail-item">
                                     <div class="detail-label">Model Version</div>
@@ -889,7 +1072,7 @@
                                 </div>
                                 <div class="detail-item">
                                     <div class="detail-label">Image Quality</div>
-                                    <div class="detail-value" id="imageQuality">Excellent</div>
+                                    <div class="detail-value" id="imageQuality">Good</div>
                                 </div>
                                 <div class="detail-item">
                                     <div class="detail-label">Scan Type</div>
@@ -903,157 +1086,224 @@
         </div>
     </div>
 
-<!-- Reports Page -->
-<div id="reportsPage" class="page" style="display:none;">
-  <div class="reports-page">
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="nav-logo">🧠 NeuroDetect</div>
-      <div class="nav-user">
-        <span>Welcome, <strong>Doctor</strong></span>
-        <button class="logout-btn" onclick="logout()">Logout</button>
-      </div>
-    </nav>
+    <!-- Reports Page -->
+    <div id="reportsPage" class="page">
+        <div class="prediction-page">
+            <nav class="navbar">
+                <div class="nav-logo">🧠 NeuroDetect</div>
+                <div class="nav-user">
+                    <span>Welcome, <strong id="userDisplayName3">Doctor</strong></span>
+                    <button class="logout-btn" onclick="logout()">Logout</button>
+                </div>
+            </nav>
 
-    <!-- Reports Container -->
-    <div class="reports-container">
-      <!-- Page Header -->
-      <div class="page-header">
-        <button class="back-btn" onclick="goToDashboard()">← Back to Dashboard</button>
-        <span class="page-title">📑 Patient Reports</span>
-      </div>
+            <div class="reports-container">
+                <div class="page-header">
+                    <button class="back-btn" onclick="goToDashboard()">← Back to Dashboard</button>
+                    <span class="page-title">📑 Patient Reports</span>
+                </div>
 
-      <!-- Search & Filter -->
-      <div class="report-filters">
-        <input type="text" placeholder="🔍 Search by Patient ID or Name" class="search-bar">
-        <select class="filter-dropdown">
-          <option value="all">All Results</option>
-          <option value="tumor">Tumor Detected</option>
-          <option value="no-tumor">No Tumor</option>
-        </select>
-      </div>
+                <div class="report-filters">
+                    <input type="text" placeholder="🔍 Search by Patient ID or Name" class="search-bar" id="searchBar">
+                    <select class="filter-dropdown" id="filterDropdown">
+                        <option value="all">All Results</option>
+                        <option value="tumor">Tumor Detected</option>
+                        <option value="no-tumor">No Tumor</option>
+                    </select>
+                </div>
 
-      <!-- Reports Table -->
-      <div class="reports-table-wrapper">
-        <table class="reports-table">
-          <thead>
-            <tr>
-              <th>Patient ID</th>
-              <!-- Add this TH after Patient ID -->
-              <th>Patient Name</th>
-              <th>Scan Date</th>
-              <th>Result</th>
-              <th>Confidence</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-  <tr>
-    <td>P001</td>
-    <td>John Doe</td> <!-- NEW -->
-    <td>2025-08-20</td>
-    <td><span class="result-badge danger">Tumor Detected</span></td>
-    <td>95%</td>
-    <td><span class="status reviewed">Reviewed</span></td>
-    <td>
-      <button class="view-btn"
-        onclick="openReport('P001','John Doe','Tumor Detected','95%','/images/sample1.jpg')">View</button>
-      <button class="download-btn">⬇ PDF</button>
-    </td>
-  </tr>
-
-  <tr>
-    <td>P002</td>
-    <td>Aisha Sharma</td> <!-- NEW -->
-    <td>2025-08-21</td>
-    <td><span class="result-badge safe">No Tumor</span></td>
-    <td>89%</td>
-    <td><span class="status pending">Pending</span></td>
-    <td>
-      <button class="view-btn"
-        onclick="openReport('P002','Aisha Sharma','No Tumor','89%','/images/sample2.jpg')">View</button>
-      <button class="download-btn">⬇ PDF</button>
-    </td>
-  </tr>
-</tbody>
-
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Popup -->
-<div id="reportModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeReport()">&times;</span>
-    
-    <h2>📝 Patient Report</h2>
-    <div class="modal-details">
-      <div class="modal-info">
-        <p><strong>Patient ID:</strong> <span id="modalPatientId"></span></p>
-        <p><strong>Name:</strong> <span id="modalPatientName"></span></p>
-        <p><strong>AI Result:</strong> <span id="modalResult"></span></p>
-        <p><strong>Confidence:</strong> <span id="modalConfidence"></span></p>
-      </div>
-      <div class="modal-image">
-        <img id="modalScanImage" src="" alt="Brain Scan">
-      </div>
+                <div class="reports-table-wrapper">
+                    <table class="reports-table">
+                        <thead>
+                            <tr>
+                                <th>Patient ID</th>
+                                <th>Patient Name</th>
+                                <th>Scan Date</th>
+                                <th>Result</th>
+                                <th>Confidence</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reportsTableBody">
+                            <tr>
+                                <td colspan="7" style="text-align: center; padding: 40px; color: #718096;">
+                                    Loading reports...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="doctor-notes">
-      <label for="notes"><strong>Doctor's Notes:</strong></label>
-      <textarea id="notes" placeholder="Enter observations..."></textarea>
+    <!-- Modal Popup -->
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeReport()">&times;</span>
+            
+            <h2>📝 Patient Report</h2>
+            <div class="modal-details">
+                <div class="modal-info">
+                    <p><strong>Patient ID:</strong> <span id="modalPatientId"></span></p>
+                    <p><strong>Name:</strong> <span id="modalPatientName"></span></p>
+                    <p><strong>AI Result:</strong> <span id="modalResult"></span></p>
+                    <p><strong>Confidence:</strong> <span id="modalConfidence"></span></p>
+                </div>
+                <div class="modal-image">
+                    <img id="modalScanImage" src="" alt="Brain Scan">
+                </div>
+            </div>
+
+            <div class="doctor-notes">
+                <label for="notes"><strong>Doctor's Notes:</strong></label>
+                <textarea id="notes" placeholder="Enter observations..."></textarea>
+            </div>
+
+            <div class="modal-actions">
+                <button class="download-btn" onclick="saveNotes()">💾 Save Notes</button>
+                <button class="download-btn">⬇ Download PDF</button>
+                <button class="close-btn2" onclick="closeReport()">Close</button>
+            </div>
+        </div>
     </div>
-
-    <div class="modal-actions">
-      <button class="download-btn">⬇ Save as PDF</button>
-      <button class="close-btn2" onclick="closeReport()">Close</button>
-    </div>
-  </div>
-</div>
-
-
-
 
     <script>
-        // Application state
+        // Global variables
         let currentUser = null;
         let currentPage = 'loginPage';
+        let currentPatientId = null;
+        let selectedFile = null;
+        let currentScanId = null;
 
-        // Tumor types and explanations
-        const tumorData = {
-            glioma: {
-                name: "Glioma Detected",
-                explanation: "Gliomas are tumors that arise from glial cells in the brain and spinal cord. The AI detected characteristic irregular boundaries and heterogeneous signal intensities typical of glial cell proliferation, indicating potential malignant transformation requiring immediate medical attention."
-            },
-            meningioma: {
-                name: "Meningioma Detected", 
-                explanation: "Meningiomas originate from the meninges surrounding the brain and are typically benign slow-growing tumors. The AI identified the characteristic well-defined borders and homogeneous enhancement pattern, suggesting a tumor arising from the protective membrane layers of the brain."
-            },
-            pituitary: {
-                name: "Pituitary Adenoma Detected",
-                explanation: "Pituitary adenomas are typically benign tumors of the pituitary gland that can affect hormone production. The AI detected an abnormal mass in the sella turcica region with characteristic enhancement patterns, potentially disrupting normal pituitary hormone regulation."
-            },
-            normal: {
-                name: "No Tumor Detected",
-                explanation: "The brain scan appears normal with no detectable tumor masses or suspicious lesions. The AI analysis shows healthy brain tissue architecture with normal signal intensities, symmetrical structures, and no evidence of abnormal cell growth or space-occupying lesions."
+        // API Base URL (adjust if needed)
+        const API_BASE = 'http://localhost:5001/api';
+
+        // Utility functions
+        function showAlert(elementId, message, type = 'info') {
+            const alertElement = document.getElementById(elementId);
+            alertElement.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+            setTimeout(() => {
+                alertElement.innerHTML = '';
+            }, 5000);
+        }
+
+        async function apiCall(endpoint, options = {}) {
+            try {
+                const response = await fetch(`${API_BASE}${endpoint}`, {
+                    credentials: 'include',
+                    ...options
+                });
+                return await response.json();
+            } catch (error) {
+                console.error('API Error:', error);
+                return { success: false, message: 'Network error occurred' };
             }
-        };
+        }
 
-        // Login functionality
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        // Authentication
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             
-            if (username && password) {
-                currentUser = username;
-                document.getElementById('userDisplayName').textContent = username;
+            const result = await apiCall('/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+
+            if (result.success) {
+                currentUser = result.user;
+                document.getElementById('userDisplayName').textContent = result.user.full_name || result.user.username;
+                document.getElementById('userDisplayName2').textContent = result.user.full_name || result.user.username;
+                document.getElementById('userDisplayName3').textContent = result.user.full_name || result.user.username;
                 showPage('dashboardPage');
+                loadDashboardStats();
+                showAlert('loginAlert', 'Login successful!', 'success');
+            } else {
+                showAlert('loginAlert', result.message || 'Login failed', 'error');
             }
         });
+
+        async function logout() {
+            await apiCall('/logout', { method: 'POST' });
+            currentUser = null;
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            showPage('loginPage');
+        }
+
+        // Dashboard functions
+        async function loadDashboardStats() {
+            const result = await apiCall('/dashboard/stats');
+            if (result.success) {
+                const stats = result.stats;
+                document.getElementById('totalScans').textContent = stats.total_scans || 0;
+                document.getElementById('accuracyRate').textContent = `${stats.accuracy_rate || 0}%`;
+                document.getElementById('avgProcessingTime').textContent = `${stats.avg_processing_time || 0}s`;
+                document.getElementById('earlyDetections').textContent = stats.early_detections || 0;
+            }
+        }
+
+        // Page navigation
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            currentPage = pageId;
+        }
+
+        function goToPrediction() {
+            showPage('predictionPage');
+            generatePatientId();
+            setTodayDate();
+            resetUploadSection();
+        }
+
+        function goToReports() {
+            showPage('reportsPage');
+            loadReports();
+        }
+
+        function goToDashboard() {
+            showPage('dashboardPage');
+            loadDashboardStats();
+        }
+
+        // Patient management
+        function generatePatientId() {
+            const timestamp = Date.now().toString().slice(-6);
+            document.getElementById('patientId').value = `P-${timestamp}`;
+        }
+
+        function setTodayDate() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('scanDate').value = today;
+        }
+
+
+        function enableUploadSection() {
+            const uploadSection = document.getElementById('uploadSection');
+            uploadSection.style.opacity = '1';
+            uploadSection.style.pointerEvents = 'auto';
+        }
+
+        function resetUploadSection() {
+            const uploadSection = document.getElementById('uploadSection');
+            uploadSection.style.opacity = '0.6';
+            uploadSection.style.pointerEvents = 'none';
+            
+            document.getElementById('uploadArea').style.display = 'block';
+            document.getElementById('imageContainer').style.display = 'none';
+            document.getElementById('loadingSection').style.display = 'none';
+            document.getElementById('noResults').style.display = 'block';
+            document.getElementById('analysisResults').style.display = 'none';
+            
+            selectedFile = null;
+        }
 
         // File upload handling
         const fileInput = document.getElementById('fileInput');
@@ -1061,11 +1311,10 @@
         const imageContainer = document.getElementById('imageContainer');
         const uploadedImage = document.getElementById('uploadedImage');
 
-        // Drag and drop
         uploadArea.addEventListener('dragover', (e) => {
             e.preventDefault();
-            uploadArea.style.borderColor = '#667eea';
-            uploadArea.style.backgroundColor = 'rgba(102, 126, 234, 0.1)';
+            uploadArea.style.borderColor = '#2563eb';
+            uploadArea.style.backgroundColor = 'rgba(210, 180, 140, 0.1)';
         });
 
         uploadArea.addEventListener('dragleave', () => {
@@ -1095,6 +1344,7 @@
                 return;
             }
 
+            selectedFile = file;
             const reader = new FileReader();
             reader.onload = (e) => {
                 uploadedImage.src = e.target.result;
@@ -1106,157 +1356,159 @@
             reader.readAsDataURL(file);
         }
 
-        function analyzeImage() {
-            const loadingSection = document.getElementById('loadingSection');
-            const loadingStep = document.getElementById('loadingStep');
-            const noResults = document.getElementById('noResults');
-            const analysisResults = document.getElementById('analysisResults');
-            
-            loadingSection.style.display = 'block';
-            noResults.style.display = 'none';
-            analysisResults.style.display = 'none';
+       async function savePatientDetails() {
+            const patientData = {
+                patient_id: document.getElementById('patientId').value,
+                full_name: document.getElementById('patientName').value.trim(),
+                age: parseInt(document.getElementById('patientAge').value),
+                gender: document.getElementById('patientGender').value,
+                scan_date: document.getElementById('scanDate').value,
+                symptoms: document.getElementById('patientNotes').value.trim()
+            };
 
-            const steps = [
-                'Initializing AI model...',
-                'Preprocessing image data...',
-                'Running convolutional layers...',
-                'Extracting feature maps...',
-                'Generating Grad-CAM visualization...',
-                'Analyzing tumor characteristics...',
-                'Finalizing results...'
-            ];
-
-            let stepIndex = 0;
-            const stepInterval = setInterval(() => {
-                if (stepIndex < steps.length) {
-                    loadingStep.textContent = steps[stepIndex];
-                    stepIndex++;
-                } else {
-                    clearInterval(stepInterval);
-                    setTimeout(() => {
-                        displayResults();
-                        loadingSection.style.display = 'none';
-                        analysisResults.style.display = 'block';
-                    }, 1000);
-                }
-            }, 800);
-        }
-
-        function displayResults() {
-            // Simulate random results
-            const tumorTypes = ['glioma', 'meningioma', 'pituitary', 'normal'];
-            const randomType = tumorTypes[Math.floor(Math.random() * tumorTypes.length)];
-            const confidence = Math.random() * 20 + 80; // 80-100%
-            
-            const resultHeader = document.getElementById('resultHeader');
-            const resultStatus = document.getElementById('resultStatus');
-            const confidenceScore = document.getElementById('confidenceScore');
-            const tumorType = document.getElementById('tumorType');
-            const explanationText = document.getElementById('explanationText');
-            const gradcamImage = document.getElementById('gradcamImage');
-            const gradcamOverlay = document.getElementById('gradcamOverlay');
-            
-            // Set result header
-            if (randomType === 'normal') {
-                resultHeader.classList.add('normal');
-                resultStatus.textContent = '✅ ' + tumorData[randomType].name;
-            } else {
-                resultHeader.classList.remove('normal');
-                resultStatus.textContent = '⚠️ ' + tumorData[randomType].name;
+            if (!patientData.full_name || !patientData.age || !patientData.gender || !patientData.scan_date) {
+                showAlert('patientAlert', 'Please fill all required fields', 'error');
+                return;
             }
-            
-            confidenceScore.textContent = `Confidence: ${confidence.toFixed(1)}%`;
-            
-            // Set explanation
-            tumorType.textContent = tumorData[randomType].name;
-            explanationText.textContent = tumorData[randomType].explanation;
-            
-            // Set Grad-CAM image (copy of uploaded image)
-            gradcamImage.src = document.getElementById('uploadedImage').src;
-            
-            // Randomize Grad-CAM overlay position for tumor cases
-            if (randomType !== 'normal') {
-                const xPos = Math.random() * 60 + 20; // 20-80%
-                const yPos = Math.random() * 60 + 20; // 20-80%
-                const size = Math.random() * 20 + 15; // 15-35%
-                gradcamOverlay.style.background = `radial-gradient(circle at ${xPos}% ${yPos}%, rgba(255, 0, 0, 0.7) ${size}%, transparent 40%)`;
+
+            const result = await apiCall('/patient/create', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(patientData)
+            });
+
+            if (result.success) {
+                currentPatientId = patientData.patient_id;
+                showAlert('patientAlert', 'Patient details saved successfully!', 'success');
+                enableUploadSection();
             } else {
-                gradcamOverlay.style.background = 'none';
+                showAlert('patientAlert', result.message || 'Failed to save patient details', 'error');
             }
-            
-            // Update details
-            document.getElementById('processingTime').textContent = (Math.random() * 2 + 2).toFixed(1) + 's';
-            
-            const qualities = ['Excellent', 'Very Good', 'Good'];
-            document.getElementById('imageQuality').textContent = qualities[Math.floor(Math.random() * qualities.length)];
-            
-            const scanTypes = ['MRI T1', 'MRI T2', 'MRI FLAIR', 'MRI DWI'];
-            document.getElementById('scanType').textContent = scanTypes[Math.floor(Math.random() * scanTypes.length)];
         }
 
-        // Page switching
-        function showPage(pageId) {
-            document.getElementById(currentPage).style.display = 'none';
-            document.getElementById(pageId).style.display = 'block';
-            currentPage = pageId;
+        // Reports functions
+        async function loadReports() {
+            const result = await apiCall('/reports');
+            const tbody = document.getElementById('reportsTableBody');
+            
+            if (result.success && result.reports.length > 0) {
+                tbody.innerHTML = result.reports.map(report => `
+                    <tr>
+                        <td>${report.patient_id}</td>
+                        <td>${report.patient_name}</td>
+                        <td>${report.scan_date}</td>
+                        <td><span class="result-badge ${report.result.includes('No Tumor') ? 'safe' : 'danger'}">${report.result}</span></td>
+                        <td>${report.confidence}</td>
+                        <td><span class="status ${report.status}">${report.status}</span></td>
+                        <td>
+                            <button class="view-btn" onclick="openReport('${report.scan_id}', '${report.patient_id}', '${report.patient_name}', '${report.result}', '${report.confidence}')">View</button>
+                            <button class="download-btn">⬇ PDF</button>
+                        </td>
+                    </tr>
+                `).join('');
+            } else {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="7" style="text-align: center; padding: 40px; color: #718096;">
+                            No reports found
+                        </td>
+                    </tr>
+                `;
+            }
         }
 
-        // Logout functionality
-        function logout() {
-            currentUser = null;
-            document.getElementById('username').value = '';
-            document.getElementById('password').value = '';
-            showPage('loginPage');
+        function openReport(scanId, patientId, patientName, result, confidence) {
+            document.getElementById("modalPatientId").textContent = patientId;
+            document.getElementById("modalPatientName").textContent = patientName;
+            document.getElementById("modalResult").textContent = result;
+            document.getElementById("modalConfidence").textContent = confidence;
+            
+            // Load scan image (placeholder for now)
+            document.getElementById("modalScanImage").src = "/api/image/placeholder.jpg";
+            
+            document.getElementById("reportModal").style.display = "block";
+            currentScanId = scanId;
         }
+
+        function closeReport() {
+            document.getElementById("reportModal").style.display = "none";
+            currentScanId = null;
+        }
+
+        async function saveNotes() {
+            if (!currentScanId) return;
+            
+            const notes = document.getElementById('notes').value.trim();
+            const result = await apiCall(`/report/${currentScanId}/notes`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ notes })
+            });
+
+            if (result.success) {
+                alert('Notes saved successfully!');
+                loadReports(); // Refresh the reports table
+            } else {
+                alert(result.message || 'Failed to save notes');
+            }
+        }
+
+        // Search and filter functionality
+        document.getElementById('searchBar')?.addEventListener('input', function() {
+            // TODO: Implement search functionality
+        });
+
+        document.getElementById('filterDropdown')?.addEventListener('change', function() {
+            // TODO: Implement filter functionality
+        });
+
+        // Initialize
+        window.onload = function() {
+            // Set initial state
+            resetUploadSection();
+        };
     </script>
-<script>
-function showPage(pageId) {
-    // Hide all pages
-    document.querySelectorAll(".page").forEach(page => {
-        page.style.display = "none";
-    });
-    // Show the requested one
-    document.getElementById(pageId).style.display = "block";
+    <script>
+async function loadReports() {
+    const tableBody = document.getElementById("reportsTableBody");
+    tableBody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 40px; color: #718096;">Loading reports...</td></tr>`;
+
+    try {
+        const response = await fetch("/api/reports");
+        const data = await response.json();
+
+        if (data.success && data.reports.length > 0) {
+            tableBody.innerHTML = ""; // clear old rows
+
+            data.reports.forEach(report => {
+                const row = `
+                    <tr>
+                        <td>${report.patient_id}</td>
+                        <td>${report.patient_name}</td>
+                        <td>${report.scan_date}</td>
+                        <td>${report.result}</td>
+                        <td>${report.confidence}</td>
+                        <td>${report.status}</td>
+                        <td><button onclick="viewReport(${report.scan_id})">View</button></td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+        } else {
+            tableBody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 40px; color: #718096;">No reports found.</td></tr>`;
+        }
+    } catch (err) {
+        console.error("Error loading reports:", err);
+        tableBody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 40px; color: red;">Failed to load reports</td></tr>`;
+    }
 }
 
-function goToPrediction() {
-    showPage("predictionPage");
-}
+// Call on page load
+document.addEventListener("DOMContentLoaded", loadReports);
 
-function goToReports() {
-    showPage("reportsPage");
-}
-
-function goToDashboard() {
-    showPage("dashboardPage");
-}
-</script>
-<script>
-function openReport(patientId, result, confidence, imageUrl) {
-  document.getElementById("modalPatientId").innerText = patientId;
-  document.getElementById("modalResult").innerText = result;
-  document.getElementById("modalConfidence").innerText = confidence;
-  document.getElementById("modalScanImage").src = imageUrl;
-
-  document.getElementById("reportModal").style.display = "block";
-}
-
-function closeReport() {
-  document.getElementById("reportModal").style.display = "none";
-}
-</script>
-<script>
-function openReport(patientId, patientName, result, confidence, imageUrl) {
-  document.getElementById("modalPatientId").innerText = patientId;
-  document.getElementById("modalPatientName").innerText = patientName; // NEW
-  document.getElementById("modalResult").innerText = result;
-  document.getElementById("modalConfidence").innerText = confidence;
-  document.getElementById("modalScanImage").src = imageUrl;
-
-  document.getElementById("reportModal").style.display = "block";
-}
-function closeReport() {
-  document.getElementById("reportModal").style.display = "none";
+// Example placeholder for "View" button
+function viewReport(scanId) {
+    alert("Open report for Scan ID: " + scanId);
 }
 </script>
 
