@@ -34,15 +34,7 @@ Source: Kaggle – Brain Tumor MRI Dataset (Masoud Nickparvar)
 
 Total Images: 7,033 MRI scans
 
-Classes:
-
-Glioma
-
-Meningioma
-
-Pituitary
-
-No Tumor
+Classes: Glioma, Meningioma, Pituitary, No Tumor
 
 Class	Training Images	Testing Images
 Glioma	1321	300
@@ -59,7 +51,7 @@ Segmentation Models: Thresholding, Otsu’s method, Watershed
 
 3D Tumor Visualization with quantitative metrics
 
-LLM Integration (Ollama Gemma-2B) → Generates medical-style reports and treatment suggestions
+LLM Integration (Ollama Gemma-2B) → Generates medical-style reports & treatment suggestions
 
 Automation (n8n) → Automates workflows and report delivery
 
@@ -97,25 +89,25 @@ Visualization: 2D overlays & interactive 3D rendering
 
 🧪 Results
 
-Achieved accurate classification of brain tumors using hybrid CNN+ViT.
+✅ Accurate classification of brain tumors using Hybrid CNN + ViT
 
-Generated interpretable heatmaps for clinical trust.
+✅ Generated interpretable heatmaps for clinical trust
 
-Automated medical-style reporting with treatment recommendations.
+✅ Automated medical-style reporting with treatment recommendations
 
-Lightweight system: Runs on CPU laptops (no GPU required).
+✅ Lightweight system → Runs on CPU laptops (no GPU required)
 
 📊 Innovations
 
-Hybrid CNN + Transformer architecture for local + global feature extraction.
+🔹 Hybrid CNN + Transformer architecture (local + global feature extraction)
 
-Explainable AI with Grad-CAM++ for trustworthy results.
+🔹 Explainable AI with Grad-CAM++ for trustworthy results
 
-Medical Report Generation using LLM.
+🔹 Medical Report Generation using LLM
 
-Workflow Automation with n8n.
+🔹 Workflow Automation with n8n
 
-3D Visualization for tumor volume & shape analysis.
+🔹 3D Visualization for tumor volume & shape analysis
 
 👨‍💻 Team Contributions
 Member	Contribution
@@ -133,7 +125,3 @@ Keerthika P	ResNet-18 + CBAM, Architecture Design
 Vipin Singhal (CTS Mentor)
 
 Renuka Devi S (College Mentor – Rajalakshmi Engineering College)
-
-⚖️ License
-
-This project is intended for research and educational purposes only. Not approved for direct clinical use.
